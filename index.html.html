@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="WindowsManufacturers.com - World's leading premium window and door manufacturer offering bespoke energy-efficient solutions with timeless elegance.">
+    <title>WindowsManufacturers.com | Premium Windows & Doors · Heritage of Excellence</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.05);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 0;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            font-size: 1.9rem;
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #B8860B, #D4AF37);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: #9b7b3c;
+            display: block;
+            letter-spacing: 0;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e2a3e;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+        .btn-primary {
+            display: inline-block;
+            background-color: #D4AF37;
+            color: #1e2a3e;
+            padding: 0.75rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #C6A43F;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+            color: #121212;
+        }
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            padding: 0.7rem 1.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            background-color: #D4AF37;
+            color: #1e2a3e;
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(20, 20, 20, 0.7), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        section {
+            padding: 5rem 0;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1f2e3a;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: #D4AF37;
+            margin: 0.8rem auto 0;
+            border-radius: 4px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #5c6f87;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            font-size: 1rem;
+        }
+        /* Products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid #f0ede5;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 35px -12px rgba(212, 175, 55, 0.15);
+            border-color: #e5d5a5;
+        }
+        .product-icon {
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .product-card p {
+            color: #4a5b6e;
+            margin-bottom: 1.2rem;
+        }
+        .learn-more {
+            color: #D4AF37;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        /* About */
+        .about-grid {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #8B6508;
+        }
+        .feature-list li i {
+            color: #D4AF37;
+        }
+        .about-img {
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.1);
+        }
+        /* Factory */
+        .factory-showcase {
+            background: #fefaf0;
+        }
+        .factory-card {
+            background: white;
+            border-radius: 26px;
+            padding: 2rem 1.5rem;
+            border: 1px solid #f4e7c3;
+            text-align: center;
+        }
+        .factory-card i {
+            color: #D4AF37;
+        }
+        .factory-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+        .gallery-item {
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+            background: white;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .gallery-caption {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 500;
+            background: white;
+            color: #8B6508;
+        }
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            border-radius: 28px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        .project-tag {
+            color: #D4AF37;
+            font-weight: 700;
+        }
+        /* Insights */
+        .insights {
+            background: #ffffff;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+        }
+        .news-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            transition: 0.3s;
+            border: 1px solid #eee9df;
+        }
+        .news-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .news-content {
+            padding: 1.5rem;
+        }
+        .news-date {
+            font-size: 0.8rem;
+            color: #D4AF37;
+            font-weight: 600;
+        }
+        /* Partners */
+        .partners {
+            background: #fff9ef;
+        }
+        /* Stats */
+        .stats {
+            background: #faf3e0;
+        }
+        .stat-number {
+            color: #D4AF37;
+        }
+        /* Contact */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #eef2f8;
+        }
+        .contact-info {
+            background: #1f1b13;
+            flex: 1;
+            padding: 2.5rem;
+            color: white;
+        }
+        .contact-info i {
+            color: #D4AF37;
+        }
+        .contact-form {
+            flex: 1;
+            padding: 2.5rem;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid #dce5ec;
+            border-radius: 60px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            border-radius: 24px;
+        }
+        /* Footer */
+        .footer {
+            background-color: #0d0b07;
+            color: #cfc9b5;
+            padding: 3rem 0 1.5rem;
+            border-top: 2px solid #D4AF37;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-brand {
+            max-width: 300px;
+        }
+        .footer-brand h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer-social {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .footer-social a {
+            color: #cfc9b5;
+            font-size: 1.3rem;
+            transition: 0.2s;
+        }
+        .footer-social a:hover {
+            color: #D4AF37;
+        }
+        .footer-links-group {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .footer-links-group div {
+            min-width: 120px;
+        }
+        .footer-links-group h4 {
+            color: #D4AF37;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .footer-links-group a {
+            display: block;
+            color: #cfc9b5;
+            text-decoration: none;
+            margin-bottom: 0.6rem;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        .footer-links-group a:hover {
+            color: #D4AF37;
+            padding-left: 4px;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2a241a;
+            padding-top: 1.8rem;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem 0;
+                background-color: white;
+                border-radius: 20px;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-social {
+                justify-content: center;
+            }
+            .footer-links-group {
+                justify-content: center;
+            }
+        }
+        html {
+            scroll-padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="#">WindowsManufacturers<span>.com</span></a>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home">Home</a>
+                    <a href="#products">Collections</a>
+                    <a href="#about">Craftsmanship</a>
+                    <a href="#factory">Smart Factory</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#insights">Insights</a>
+                    <a href="#contact">Concierge</a>
+                    <a href="#" class="btn-outline" style="padding: 0.4rem 1.2rem;">Request Quote</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>Golden Precision · Timeless Legacy</h1>
+                <p>WindowsManufacturers.com merges German engineering with Italian design, delivering premium system windows and doors for global landmarks. Annual capacity exceeds 1.2 million sqm — every window an heirloom asset.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-primary">Explore Collections <i class="fas fa-arrow-right"></i></a>
+                    <a href="#factory" class="btn-outline">VR Factory Tour</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product series (6 items) -->
+        <section id="products">
+            <div class="container">
+                <h2 class="section-title">Six Signature Collections</h2>
+                <p class="section-sub">Over 30 finishes, multi‑seal technologies, extreme thermal and acoustic performance.</p>
+                <div class="products-grid">
+                    <div class="product-card"><div class="product-icon"><i class="fas fa-window-maximize"></i></div><h3>Passive Gold Alu</h3><p>PHI-A+ certified, U‑value as low as 0.73, triple Low‑E glazing, air permeability class 8 (EN), energy savings up to 65%.</p><a href="#" class="learn-more">Specs <i class="fas fa-chevron-right"></i></a></div>
+                    <div class="product-card"><div class="product-icon"><i class="fas fa-tachometer-alt"></i></div><h3>Ultra‑Slim Aureum</h3><p>Visible frame 28mm, aerospace 6061 aluminium, heavy‑duty European hardware, wind load resistance class 10.</p><a href="#" class="learn-more">Specs <i class="fas fa-chevron-right"></i></a></div>
+                    <div class="product-card"><div class="product-icon"><i class="fas fa-door-open"></i></div><h3>Panoramic Golden Slider</h3><p>Max single sash 4m x 3m, electric lift + Milan gold anodized finish, anti‑derailment system for seaside luxury.</p><a href="#" class="learn-more">Specs <i class="fas fa-chevron-right"></i></a></div>
+                    <div class="product-card"><div class="product-icon"><i class="fas fa-shield-alt"></i></div><h3>Golden Shield Security</h3><p>FB6 ballistic rating, multi‑point locking, military‑grade laminated glass for high‑security residences and vaults.</p><a href="#" class="learn-more">Specs <i class="fas fa-chevron-right"></i></a></div>
+                    <div class="product-card"><div class="product-icon"><i class="fas fa-umbrella"></i></div><h3>Gold Wood Heritage</h3><p>North American red oak + gold anodized aluminium exterior, hand‑crafted mortise & tenon, centuries‑long durability.</p><a href="#" class="learn-more">Specs <i class="fas fa-chevron-right"></i></a></div>
+                    <div class="product-card"><div class="product-icon"><i class="fas fa-solar-panel"></i></div><h3>BIPV Solar Window</h3><p>Integrated photovoltaic + smart dimming, adjustable transparency, generates ~80 kWh/m²/year, ideal for net‑zero buildings.</p><a href="#" class="learn-more">Specs <i class="fas fa-chevron-right"></i></a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About + global footprint -->
+        <section id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Global Gold Standard Manufacturer · 22 Years of Excellence</h3>
+                        <p>Founded in 2003, WindowsManufacturers is a global leader in high‑end system fenestration. With R&D hubs in Suzhou, Milan, and Dubai, and a 120,000 m² Industry 4.0 campus, we deliver bespoke solutions for six‑star hotels, royal palaces, and LEED Platinum landmarks.</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> German Elumatec lines, precision ±0.05 mm</li>
+                            <li><i class="fas fa-crown"></i> 5 consecutive Red Dot & iF Design Awards</li>
+                            <li><i class="fas fa-globe"></i> 56 countries served, 9 million units delivered</li>
+                            <li><i class="fas fa-chart-line"></i> 20‑year warranty, lifetime free adjustments</li>
+                            <li><i class="fas fa-leaf"></i> Carbon‑neutral plant, 100% green electricity + circular aluminium</li>
+                        </ul>
+                        <a href="#contact" class="btn-primary">Book an Exclusive Tour</a>
+                    </div>
+                    <div class="about-img">
+                        <img src="https://images.pexels.com/photos/273230/pexels-photo-273230.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Fully automated manufacturing base" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smart factory gallery (industry 4.0) -->
+        <section id="factory" class="factory-showcase">
+            <div class="container">
+                <h2 class="section-title">Golden Smart Factory · Industry 4.0 Benchmark</h2>
+                <p class="section-sub">From aluminium billet to finished window, fully integrated MES — one premium window every 2 minutes.</p>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem;">
+                    <div class="factory-card"><i class="fas fa-microchip"></i><h4>AI Visual Inspection</h4><p>16 high‑precision cameras inspect cuts and glass; defect detection rate 99.93%.</p></div>
+                    <div class="factory-card"><i class="fas fa-temperature-low"></i><h4>Extreme Climate Chamber</h4><p>-55°C to +85°C simulation, every batch tested for global performance consistency.</p></div>
+                    <div class="factory-card"><i class="fas fa-recycle"></i><h4>Closed‑loop Aluminium Recycling</h4><p>100% remelting of offcuts, reducing carbon emissions by 5,000 tons/year.</p></div>
+                </div>
+                <div class="factory-gallery">
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/2223561/pexels-photo-2223561.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="German CNC machining"><div class="gallery-caption">German Elumatec twin‑head saw · Laser calibration</div></div>
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Robotic assembly line"><div class="gallery-caption">Robotic corner crimping + fully automated sealant line</div></div>
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/6620389/pexels-photo-6620389.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Water penetration lab"><div class="gallery-caption">National curtain wall test centre · Water tightness >15 Pa</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Landmark projects -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Global Iconic Projects</h2>
+                <p class="section-sub">From Hudson Yards to Royal Atlantis, WindowsManufacturers writes architectural history.</p>
+                <div class="projects-grid">
+                    <div class="project-card"><img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dubai Royal Residence"><div class="project-info"><div class="project-tag">Dubai · Palm Jumeirah</div><h4>Royal Atlantis Hotel</h4><p>1,200 curved panoramic sliding systems, salt‑resistant gold‑titanium coating, extreme desert climate performance.</p></div></div>
+                    <div class="project-card"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Shanghai Tower"><div class="project-info"><div class="project-tag">Shanghai · China</div><h4>J Hotel, Shanghai Tower</h4><p>Super high‑rise energy‑saving windows, wind tunnel tested up to typhoon level, air & water tightness class 10.</p></div></div>
+                    <div class="project-card"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Svalbard Global Seed Vault"><div class="project-info"><div class="project-tag">Norway · Longyearbyen</div><h4>Arctic World Archive – New Wing</h4><p>Extreme‑insulation windows, U‑value 0.6, no condensation at -55°C interior surface.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry insights & news -->
+        <section id="insights" class="insights">
+            <div class="container">
+                <h2 class="section-title">Golden Insights · Future Perspectives</h2>
+                <p class="section-sub">White papers, design trends, and innovation for global architects.</p>
+                <div class="news-grid">
+                    <div class="news-card"><img class="news-img" src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Design forum"><div class="news-content"><div class="news-date"><i class="far fa-calendar-alt"></i> April 15, 2025</div><h4>Golden Fenestration Award Launch</h4><p>Joint with IFI, winning designs to be realized on a New York skyscraper.</p><a href="#" class="learn-more">Read more →</a></div></div>
+                    <div class="news-card"><img class="news-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Report cover"><div class="news-content"><div class="news-date"><i class="far fa-file-alt"></i> March 28, 2025</div><h4>2025 Zero‑Carbon Window White Paper</h4><p>First full lifecycle carbon footprint data released for carbon‑neutral architecture.</p><a href="#" class="learn-more">Download →</a></div></div>
+                    <div class="news-card"><img class="news-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Milan Design Week"><div class="news-content"><div class="news-date"><i class="far fa-calendar-check"></i> April 8, 2025</div><h4>Milan Design Week · Minimalist Gold Series</h4><p>Curved smart windows with Zaha Hadid Architects, electrochromic glass steals the show.</p><a href="#" class="learn-more">Replay →</a></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & partners -->
+        <section class="partners">
+            <div class="container">
+                <h2 class="section-title">Global Certifications & Trusted Partners</h2>
+                <p class="section-sub">Every window carries internationally recognised quality marks.</p>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem;">
+                    <span>🏅 PHI Passive House Component</span>
+                    <span>🏅 CE + UKCA</span>
+                    <span>🏅 NFRC (USA)</span>
+                    <span>🏅 China Green Building 3‑Star</span>
+                    <span>🏅 BREEAM Outstanding</span>
+                    <span>🏅 WELL Health‑Safety</span>
+                    <span>🏅 ISO 14064 Carbon Verification</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; text-align: center;">
+                    <div class="stat-item"><div class="stat-number">22 years</div><div class="stat-label">Legacy of Excellence</div></div>
+                    <div class="stat-item"><div class="stat-number">9M+</div><div class="stat-label">Windows Delivered</div></div>
+                    <div class="stat-item"><div class="stat-number">56</div><div class="stat-label">Countries Served</div></div>
+                    <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Carbon‑Neutral Plant</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact form -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Exclusive Tailored Service</h2>
+                <p class="section-sub">Personal consultation, free onsite survey, and full lifecycle support.</p>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>Begin Your Golden Perspective</h3>
+                        <p>Fill the form to receive <strong>Global Case Study Book + Quotation Template + Carbon‑Neutral Proposal</strong>.</p>
+                        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> Headquarters: Suzhou Industrial Park, China / Milan Design Hub</div>
+                        <div class="contact-detail"><i class="fas fa-phone-alt"></i> Concierge Hotline: +86 400 986 6688</div>
+                        <div class="contact-detail"><i class="fas fa-envelope"></i> gold@windowsmanufacturers.com</div>
+                        <div class="contact-detail"><i class="fab fa-whatsapp"></i> +971 50 123 4567 (Global Trade Desk)</div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="inquiryForm">
+                            <div class="form-group"><input type="text" id="name" placeholder="Full name*" required></div>
+                            <div class="form-group"><input type="email" id="email" placeholder="Email address*" required></div>
+                            <div class="form-group"><input type="tel" id="phone" placeholder="Phone / WhatsApp"></div>
+                            <div class="form-group"><textarea rows="4" id="message" placeholder="Project details, estimated area, style preferences"></textarea></div>
+                            <button type="submit" class="btn-primary">Request Concierge Service <i class="fas fa-gem"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>WindowsManufacturers<span style="color:#b8943c;">.com</span></h3>
+                    <p>Golden Fenestration · Sustainable Legacy<br>German Industry 4.0, serving global landmarks</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WeChat"><i class="fab fa-weixin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <div>
+                        <h4>Explore Products</h4>
+                        <a href="#">Passive Gold Alu</a>
+                        <a href="#">Ultra‑Slim Aureum</a>
+                        <a href="#">Panoramic Slider</a>
+                        <a href="#">BIPV Solar Window</a>
+                    </div>
+                    <div>
+                        <h4>Support</h4>
+                        <a href="#">Installation & Care</a>
+                        <a href="#">Global Case Library</a>
+                        <a href="#">Colour & Material</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                    <div>
+                        <h4>Legal</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Warranty Terms</a>
+                        <a href="#">Supplier Code</a>
+                        <a href="#">Cookie Statement</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 WindowsManufacturers.com — All rights reserved. Golden windows, eternal architecture. A carbon‑neutral committed brand.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (navToggle) {
+            navToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                const icon = navToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+        }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                }
+            });
+        });
+        const form = document.getElementById('inquiryForm');
+        if(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                if (!name || !email) return alert('Please provide your name and email. Your dedicated concierge will respond shortly.');
+                alert(`Thank you, ${name}! Your exclusive gold‑standard consultant will contact you within 24 hours.`);
+                form.reset();
+            });
+        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === "#" || href === "") return;
+                const target = document.querySelector(href);
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); history.pushState(null, null, href); }
+            });
+        });
+    </script>
+</body>
+</html>
