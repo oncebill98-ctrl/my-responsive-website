@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main # 如果你的主分支叫 master，请把 main 改成 master
+
+media_folder: "images/uploads" # 你后台上传的图片会自动存到这里
+public_folder: "/images/uploads"
+
+collections:   集合:
+  - name: "products"
+    label: "产品管理"
+    folder: "content/products" # 你发的产品信息会自动以文件形式存到这里
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "产品名称", name: "title", widget: "string" }- { label: "产品名称", name: "title", widget: "string" }
+      - { label: "产品图片", name: "image", widget: "image" }- { label: "产品图片", name: "image", widget: "image" }
+      - { label: "产品详细描述", name: "body", widget: "markdown" }
